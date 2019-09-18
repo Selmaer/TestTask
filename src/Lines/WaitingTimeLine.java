@@ -1,5 +1,6 @@
 package Lines;
 
+import Input.InputLine;
 import Lines.Data.Date;
 import Lines.Data.Question;
 import Lines.Data.ResponseType;
@@ -12,11 +13,19 @@ public class WaitingTimeLine extends Line {
     LocalDate date;
     int time;
 
-    public WaitingTimeLine(String[] lineArray) throws OutOfTaskConditionsException {
-        this.service = new Service(lineArray[1]);
-        this.question = new Question(lineArray[2]);
-        this.responseType = ResponseType.set(lineArray[3]);
-        date = Date.toLocalDate(lineArray[4]);
-        time = Integer.parseInt(lineArray[5]);
+    public WaitingTimeLine(InputLine line) throws OutOfTaskConditionsException {
+        this.service = new Service(line.getServiceStr());
+        this.question = new Question(line.getQuestionStr());
+        this.responseType = ResponseType.set(line.getResponseType());
+        date = Date.toLocalDate(line.getDate());
+        time = Integer.parseInt(line.getTime());
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public int getTime() {
+        return time;
     }
 }

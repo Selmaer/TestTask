@@ -1,4 +1,4 @@
-package Lines.Conditions;
+package Input;
 
 public class TaskConditions {
     public static final int SERVICES_AMOUNT = 10;

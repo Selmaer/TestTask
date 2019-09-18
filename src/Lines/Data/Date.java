@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Date {
 
     public static LocalDate toLocalDate(String date) {
-        String[] dateArr = date.split(".");
+        String[] dateArr = date.split("\\.");
         return LocalDate.of(convertToInt(dateArr[2]), convertToInt(dateArr[1]), convertToInt(dateArr[0]));
     }
 

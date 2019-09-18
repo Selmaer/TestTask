@@ -1,19 +1,30 @@
 package Lines.Data;
 
-import Lines.Conditions.TaskConditions;
+import Input.TaskConditions;
 import Lines.Exceptions.OutOfTaskConditionsException;
 
 public class Question {
-    private Boolean allOfTheQuestions;
+    private boolean allOfTheQuestions;
     private Integer questionTypeId;
     private Integer categoryId;
     private Integer subCategoryId;
 
+    private static int validate(String inputData, int condition) throws OutOfTaskConditionsException {
+        int input = Integer.parseInt(inputData);
+
+        if (input > 0 && input <= condition) {
+            return input;
+        } else {
+            throw new OutOfTaskConditionsException();
+        }
+    }
+
     public Question(String questionData) throws OutOfTaskConditionsException {
-        String[] qd = questionData.split(".");
+//        System.out.println(questionData);
+        String[] qd = questionData.split("\\.");
 
         if (qd.length > 0) {
-            if (qd[0] == "*") {
+            if (qd[0].equals("*")) {
                 allOfTheQuestions = true;
             } else {
                 questionTypeId = validate(qd[0], TaskConditions.QUESTION_TYPES);
@@ -27,15 +38,14 @@ public class Question {
         }
     }
 
-    private static int validate(String inputData, int condition) throws OutOfTaskConditionsException {
-        int input = Integer.parseInt(inputData);
-
-        if (input > 0 && input <= condition) {
-            return input;
-        } else {
-            throw new OutOfTaskConditionsException();
-        }
+    public boolean includes(Question other) {
+        return allOfTheQuestions || (
+                (questionTypeId == other.questionTypeId) &&
+                        ((categoryId == null) || (categoryId == other.categoryId)) &&
+                        ((subCategoryId == null) || (subCategoryId == other.subCategoryId))
+        );
     }
+
 
     public Boolean getAllOfTheQuestions() {
         return allOfTheQuestions;
