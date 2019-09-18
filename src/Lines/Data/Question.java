@@ -20,7 +20,6 @@ public class Question {
     }
 
     public Question(String questionData) throws OutOfTaskConditionsException {
-//        System.out.println(questionData);
         String[] qd = questionData.split("\\.");
 
         if (qd.length > 0) {
@@ -40,26 +39,9 @@ public class Question {
 
     public boolean includes(Question other) {
         return allOfTheQuestions || (
-                (questionTypeId == other.questionTypeId) &&
-                        ((categoryId == null) || (categoryId == other.categoryId)) &&
-                        ((subCategoryId == null) || (subCategoryId == other.subCategoryId))
+                (questionTypeId.equals(other.questionTypeId)) &&
+                        ((categoryId == null) || (categoryId.equals(other.categoryId))) &&
+                        ((subCategoryId == null) || (subCategoryId.equals(other.subCategoryId)))
         );
-    }
-
-
-    public Boolean getAllOfTheQuestions() {
-        return allOfTheQuestions;
-    }
-
-    public Integer getQuestionTypeId() {
-        return questionTypeId;
-    }
-
-    public Integer getCategoryId() {
-        return categoryId;
-    }
-
-    public Integer getSubCategoryId() {
-        return subCategoryId;
     }
 }

@@ -11,5 +11,9 @@ public class Task {
 
         ArrayList<Query> queries = inputData.getQueries();
         ArrayList<WaitingTimeLine> waitingTimeLines = inputData.getWaitingTimeLines();
+
+        for (Query query : queries) {
+            System.out.println(query.getAverageWaitingTime(waitingTimeLines));
+        }
     }
 }

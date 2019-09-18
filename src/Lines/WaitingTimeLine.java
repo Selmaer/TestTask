@@ -10,22 +10,22 @@ import Lines.Exceptions.OutOfTaskConditionsException;
 import java.time.LocalDate;
 
 public class WaitingTimeLine extends Line {
-    LocalDate date;
-    int time;
+    private LocalDate date;
+    private int waitingTime;
 
     public WaitingTimeLine(InputLine line) throws OutOfTaskConditionsException {
         this.service = new Service(line.getServiceStr());
         this.question = new Question(line.getQuestionStr());
         this.responseType = ResponseType.set(line.getResponseType());
         date = Date.toLocalDate(line.getDate());
-        time = Integer.parseInt(line.getTime());
+        waitingTime = Integer.parseInt(line.getTime());
     }
 
     public LocalDate getDate() {
         return date;
     }
 
-    public int getTime() {
-        return time;
+    public int getWaitingTime() {
+        return waitingTime;
     }
 }

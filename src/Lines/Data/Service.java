@@ -19,7 +19,6 @@ public class Service {
     }
 
     public Service(String serviceData) throws OutOfTaskConditionsException {
-//        System.out.println(serviceData);
         String[] sd = serviceData.split("\\.");
 
         if (sd.length > 0) {
@@ -27,30 +26,16 @@ public class Service {
                 allOfTheServices = true;
             } else {
                 serviceId = validate(sd[0], TaskConditions.SERVICES_AMOUNT);
-                System.out.println(serviceId);
             }
         }
         if (sd.length > 1) {
             variationId = validate(sd[1], TaskConditions.VARIATIONS_AMOUNT);
-            System.out.println(variationId);
         }
     }
 
     public boolean includes(Service other) {
         return allOfTheServices ||
-                ((serviceId == other.serviceId) &&
-                        ((variationId == null) || (variationId == other.variationId)));
-    }
-
-    public Boolean getAllOfTheServices() {
-        return allOfTheServices;
-    }
-
-    public Integer getServiceId() {
-        return serviceId;
-    }
-
-    public Integer getVariationId() {
-        return variationId;
+                ((serviceId.equals(other.serviceId)) &&
+                        ((variationId == null) || (variationId.equals(other.variationId))));
     }
 }
