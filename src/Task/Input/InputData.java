@@ -5,6 +5,7 @@ import Task.Lines.Query;
 import Task.Lines.WaitingTimeLine;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InputData {
@@ -13,7 +14,12 @@ public class InputData {
 
     private void readInputData() throws OutOfTaskConditionsException {
         Scanner scanner = new Scanner(System.in);
-        int linesNumber = scanner.nextInt();
+        int linesNumber;
+        try {
+            linesNumber = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            throw new OutOfTaskConditionsException();
+        }
         scanner.nextLine();
         ArrayList<InputLine> lines = new ArrayList<>(linesNumber);
         for (int i = 0; i < linesNumber; i++) {
@@ -41,7 +47,8 @@ public class InputData {
         try {
             readInputData();
         } catch (OutOfTaskConditionsException e) {
-            System.out.println("Data you've entered do not match task conditions");
+            System.out.println("Data you've entered do not match task conditions.");
+            System.exit(0);
         }
     }
 

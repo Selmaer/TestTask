@@ -4,20 +4,20 @@ import Task.Lines.Data.Question;
 import Task.Lines.Data.ResponseType;
 import Task.Lines.Data.Service;
 
-public abstract class Line {
-    protected Service service;
-    protected Question question;
-    protected ResponseType responseType;
+abstract class Line {
+    Service service;
+    Question question;
+    ResponseType responseType;
 
-    public Service getService() {
+    Service getService() {
         return service;
     }
 
-    public Question getQuestion() {
+    Question getQuestion() {
         return question;
     }
 
-    public ResponseType getResponseType() {
+    ResponseType getResponseType() {
         return responseType;
     }
 }
