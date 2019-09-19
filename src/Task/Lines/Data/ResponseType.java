@@ -1,6 +1,6 @@
-package Lines.Data;
+package Task.Lines.Data;
 
-import Lines.Exceptions.OutOfTaskConditionsException;
+import Task.Exceptions.OutOfTaskConditionsException;
 
 public enum ResponseType {
     FIRST_ANSWER,

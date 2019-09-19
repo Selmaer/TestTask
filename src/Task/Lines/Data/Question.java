@@ -1,7 +1,7 @@
-package Lines.Data;
+package Task.Lines.Data;
 
-import Input.TaskConditions;
-import Lines.Exceptions.OutOfTaskConditionsException;
+import Task.Exceptions.OutOfTaskConditionsException;
+import Task.TaskConditions;
 
 public class Question {
     private boolean allOfTheQuestions;

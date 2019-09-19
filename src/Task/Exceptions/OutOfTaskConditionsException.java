@@ -1,4 +1,4 @@
-package Lines.Exceptions;
+package Task.Exceptions;
 
 public class OutOfTaskConditionsException extends Exception {
 }

@@ -1,8 +1,8 @@
-package Lines;
+package Task.Lines;
 
-import Lines.Data.Question;
-import Lines.Data.ResponseType;
-import Lines.Data.Service;
+import Task.Lines.Data.Question;
+import Task.Lines.Data.ResponseType;
+import Task.Lines.Data.Service;
 
 public abstract class Line {
     protected Service service;

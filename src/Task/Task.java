@@ -1,6 +1,8 @@
-import Input.InputData;
-import Lines.Query;
-import Lines.WaitingTimeLine;
+package Task;
+
+import Task.Input.InputData;
+import Task.Lines.Query;
+import Task.Lines.WaitingTimeLine;
 
 import java.util.ArrayList;
 

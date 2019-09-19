@@ -1,4 +1,4 @@
-package Input;
+package Task.Input;
 
 public class InputLine {
     private String definingChar;

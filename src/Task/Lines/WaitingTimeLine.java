@@ -1,11 +1,11 @@
-package Lines;
+package Task.Lines;
 
-import Input.InputLine;
-import Lines.Data.Date;
-import Lines.Data.Question;
-import Lines.Data.ResponseType;
-import Lines.Data.Service;
-import Lines.Exceptions.OutOfTaskConditionsException;
+import Task.Exceptions.OutOfTaskConditionsException;
+import Task.Input.InputLine;
+import Task.Lines.Data.Date;
+import Task.Lines.Data.Question;
+import Task.Lines.Data.ResponseType;
+import Task.Lines.Data.Service;
 
 import java.time.LocalDate;
 

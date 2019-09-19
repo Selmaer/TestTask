@@ -1,8 +1,8 @@
-package Input;
+package Task.Input;
 
-import Lines.Exceptions.OutOfTaskConditionsException;
-import Lines.Query;
-import Lines.WaitingTimeLine;
+import Task.Exceptions.OutOfTaskConditionsException;
+import Task.Lines.Query;
+import Task.Lines.WaitingTimeLine;
 
 import java.util.ArrayList;
 import java.util.Scanner;
